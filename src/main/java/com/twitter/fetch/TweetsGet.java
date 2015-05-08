@@ -56,6 +56,7 @@ public final class TweetsGet
             		td.setCreatedAt(new java.sql.Timestamp(status.getCreatedAt().getTime()));
             		td.setTweet(status.getText().replaceAll(",", " "));
             		queue.add(td);
+            		System.out.println("Queue size:" + queue.size());
             	}
             	
             }

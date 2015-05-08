@@ -33,7 +33,8 @@ public class TweetsWriter
 			try
 			{
 				TweetsData td = null;
-				td = queue.poll(10, TimeUnit.SECONDS);
+				td = queue.poll(100, TimeUnit.SECONDS);
+				System.out.println(queue.size());
 				StringBuffer sb = new StringBuffer();
 				sb.append(tweetCount).append(", ")
         		.append(td.getCreatedAt()).append(", ")
