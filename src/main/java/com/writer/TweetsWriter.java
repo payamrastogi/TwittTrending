@@ -4,6 +4,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.math.BigInteger;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -18,6 +19,7 @@ public class TweetsWriter
 	FileOutputStream fos;
 	BufferedOutputStream bos;
 	File file;
+	BigInteger tweetCount = new BigInteger("1");
 	
 	public TweetsWriter(LinkedBlockingQueue<TweetsData> queue)
 	{
@@ -33,7 +35,8 @@ public class TweetsWriter
 				TweetsData td = null;
 				td = queue.poll(10, TimeUnit.SECONDS);
 				StringBuffer sb = new StringBuffer();
-        		sb.append(td.getCreatedAt()).append(", ")
+				sb.append(tweetCount).append(", ")
+        		.append(td.getCreatedAt()).append(", ")
         		.append(td.getTweet()).append(", ")
         		.append(td.getLatitude()).append(", ")
         		.append(td.getLongitude());
