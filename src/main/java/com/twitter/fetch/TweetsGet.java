@@ -17,7 +17,7 @@ import twitter4j.conf.ConfigurationBuilder;
 public final class TweetsGet 
 {
 	LinkedBlockingQueue<TweetsData> queue;
-	String[] keywords = {"#Salman", "#Bail4SalmanNot4Saints","#SalmanGuilty"};
+	String[] keywords = {"Salman", "#Bail4SalmanNot4Saints","#SalmanGuilty"};
 	
 	public TweetsGet(LinkedBlockingQueue<TweetsData> queue)
 	{
