@@ -41,7 +41,7 @@ public final class TweetsGet
             {
             	if("en".equals(status.getLang()))
             	{
-            	
+            		System.out.println(status.getText());
             		TweetsData td = new TweetsData();
             		if(status.getGeoLocation()!=null)
             		{
