@@ -19,7 +19,7 @@ public class TweetsWriter
 	FileOutputStream fos;
 	BufferedOutputStream bos;
 	File file;
-	BigInteger tweetCount = new BigInteger("1");
+	static BigInteger tweetCount = new BigInteger("1");
 	
 	public TweetsWriter(LinkedBlockingQueue<TweetsData> queue)
 	{
@@ -41,6 +41,7 @@ public class TweetsWriter
         		.append(td.getLatitude()).append(", ")
         		.append(td.getLongitude());
         		this.fileWrite(sb);
+        		tweetCount = tweetCount.add(new BigInteger("1"));
 			}
 			catch(InterruptedException ioe )
 			{
